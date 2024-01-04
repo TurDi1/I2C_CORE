@@ -1,0 +1,9 @@
+module I2C_CORE (
+	reset,
+	clk,
+	out
+);
+
+assign out = !reset & clk;
+
+endmodule 

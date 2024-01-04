@@ -1,0 +1,13 @@
+module clock_generator (
+	reset,
+	clk,
+	output_clk
+);
+
+input		reset;
+input		clk;
+output	output_clk;
+
+
+//
+endmodule 

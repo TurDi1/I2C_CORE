@@ -1,0 +1,12 @@
+vendor_name = ModelSim
+source_file = 1, /home/turdi/Quartus_projects/sources/Top_files/I2C_CORE.v
+source_file = 1, /home/turdi/Quartus_projects/I2C/db/I2C_CORE.cbx.xml
+design_name = I2C_CORE
+instance = comp, \out~output , out~output, I2C_CORE, 1
+instance = comp, \reset~input , reset~input, I2C_CORE, 1
+instance = comp, \clk~input , clk~input, I2C_CORE, 1
+instance = comp, \out~0 , out~0, I2C_CORE, 1
+design_name = hard_block
+instance = comp, \~ALTERA_ASDO_DATA1~~ibuf , ~ALTERA_ASDO_DATA1~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_FLASH_nCE_nCSO~~ibuf , ~ALTERA_FLASH_nCE_nCSO~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_DATA0~~ibuf , ~ALTERA_DATA0~~ibuf, hard_block, 1
