@@ -31,7 +31,7 @@ inout				sda;			// Serial data inout
 clock_generator clock_generator (
 	.reset		(reset),
 	.clk			(clk),
-	.freq_mode	(),
+	.freq_mode	(2'b00),
 	.output_clk	(scl)
 );
 //
