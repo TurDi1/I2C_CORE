@@ -6,4 +6,4 @@
 * I2C-bus specification and user manual (UM10204)
 * COMPUTER PRINCIPLES AND DESIGN IN VERILOG HDL. Yamin Li
 
-P.S. В данный момент недавно приступил к описанию ядра и загрузил совсем "пустой" проект для Quartus Prime. 
+Статус 06.01: завершено описание чернового модуля генератора частоты.
