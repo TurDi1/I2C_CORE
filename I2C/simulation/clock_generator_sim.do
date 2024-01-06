@@ -10,4 +10,4 @@ sim:/I2C_CORE_vlg_tst/i1/clock_generator/output_clk \
 sim:/I2C_CORE_vlg_tst/i1/clock_generator/freq_divider \
 sim:/I2C_CORE_vlg_tst/i1/clock_generator/out_clk_ff
 
-run 30000
+run 120000
