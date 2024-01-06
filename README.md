@@ -4,7 +4,7 @@
 
 Используемая документация и литература:
 * I2C-bus specification and user manual (UM10204)
-* COMPUTER PRINCIPLES AND DESIGN IN VERILOG HDL. Yamin Li
+* COMPUTER PRINCIPLES AND DESIGN IN VERILOG HDL. Yamin Li  
 
 Описываемое ядро состоит из следующих основных модулей:
 * Генератора частоты SCL.
