@@ -8,7 +8,7 @@ module clock_generator (
 input       reset;      // System reset input
 input       clk;        // System clock input (50 MHz)
 input [1:0] freq_mode;  // I2C mode selector
-output      output_clk;	// Output clock for internal core i2c logic and SCL port 
+output reg  output_clk;	// Output clock for internal core i2c logic and SCL port 
 
 //==================
 // Wire's, reg's etc
