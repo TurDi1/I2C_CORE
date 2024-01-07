@@ -7,76 +7,76 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/home/turdi/Quartus_projects/I2C/simulation/modelsim
+Z0 dC:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/I2C/simulation/modelsim
 vclock_generator
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1704533366
+Z2 !s110 1704666858
 !i10b 1
-!s100 3YPkkd_gT4_b>>[=V9k953
-Ij[4B>e6<Ioz1N>m;P`EBP0
+!s100 4g?OoAP>@CLRM_7a?9:9J1
+I3X^gBX8eMhD^C<O[2I8Mg2
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 !s105 clock_generator_v_unit
 S1
 R0
-w1704533273
-8/home/turdi/Quartus_projects/sources/Modules/clock_generator.v
-F/home/turdi/Quartus_projects/sources/Modules/clock_generator.v
+w1704666802
+8C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules/clock_generator.v
+FC:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules/clock_generator.v
 L0 1
 Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1704533366.000000
-!s107 /home/turdi/Quartus_projects/sources/Modules/clock_generator.v|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/turdi/Quartus_projects/sources/Modules|/home/turdi/Quartus_projects/sources/Modules/clock_generator.v|
+Z5 !s108 1704666858.000000
+!s107 C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules/clock_generator.v|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules|C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules/clock_generator.v|
 !i113 1
 Z6 o-sv -work work
-!s92 -sv -work work +incdir+/home/turdi/Quartus_projects/sources/Modules
+!s92 -sv -work work +incdir+C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules
 Z7 tCvgOpt 0
 vI2C_CORE
 R1
 R2
 !i10b 1
-!s100 l0D3oPJlSl0^;hC0JS_zm3
-I1IAh>@i1No^6HmR6Jb9VG1
+!s100 76nZ4Ha4EMig^jgzL=>:L3
+Ih>niP@j39V46T3InB9]e=2
 R3
 !s105 I2C_CORE_v_unit
 S1
 R0
-w1704520726
-8/home/turdi/Quartus_projects/sources/Top_files/I2C_CORE.v
-F/home/turdi/Quartus_projects/sources/Top_files/I2C_CORE.v
+w1704653165
+8C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Top_files/I2C_CORE.v
+FC:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Top_files/I2C_CORE.v
 L0 1
 R4
 r1
 !s85 0
 31
 R5
-!s107 /home/turdi/Quartus_projects/sources/Top_files/I2C_CORE.v|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/turdi/Quartus_projects/sources/Top_files|/home/turdi/Quartus_projects/sources/Top_files/I2C_CORE.v|
+!s107 C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Top_files/I2C_CORE.v|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Top_files|C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Top_files/I2C_CORE.v|
 !i113 1
 R6
-!s92 -sv -work work +incdir+/home/turdi/Quartus_projects/sources/Top_files
+!s92 -sv -work work +incdir+C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Top_files
 R7
 n@i2@c_@c@o@r@e
 vI2C_CORE_vlg_tst
-!s110 1704533528
+!s110 1704666872
 !i10b 1
-!s100 TfcdfidH9Z9F54:c^oH8^2
-INPCa4S?J^fAGjO1Lf`H>n0
+!s100 dP6OBRcSN8_?i``h8^JH]0
+IEMR6UJ1;^I_E_BDb`z9>83
 R3
 R0
-w1704533522
-8/home/turdi/Quartus_projects/I2C/simulation/modelsim/I2C_CORE.vt
-F/home/turdi/Quartus_projects/I2C/simulation/modelsim/I2C_CORE.vt
+w1704553160
+8C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/I2C/simulation/modelsim/I2C_CORE.vt
+FC:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/I2C/simulation/modelsim/I2C_CORE.vt
 L0 29
 R4
 r1
 !s85 0
 31
-!s108 1704533528.000000
-!s107 /home/turdi/Quartus_projects/I2C/simulation/modelsim/I2C_CORE.vt|
-!s90 -reportprogress|300|-work|work|/home/turdi/Quartus_projects/I2C/simulation/modelsim/I2C_CORE.vt|
+!s108 1704666872.000000
+!s107 C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/I2C/simulation/modelsim/I2C_CORE.vt|
+!s90 -reportprogress|300|-work|work|C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/I2C/simulation/modelsim/I2C_CORE.vt|
 !i113 1
 o-work work
 R7

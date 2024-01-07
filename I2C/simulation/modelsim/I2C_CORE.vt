@@ -73,6 +73,26 @@ begin
    mode  <= 2'b00;
 #1500
    reset <= 1;
+
+#30000
+	reset	<= 0;
+#10
+	reset	<= 1;
+
+#30000
+	reset	<= 0;
+#10
+	reset	<= 1;
+
+#30000
+	reset	<= 0;
+#10
+	reset	<= 1;
+
+#30000
+	reset	<= 0;
+#10
+	reset	<= 1;	
    
 end                                                    
 always                                                 
