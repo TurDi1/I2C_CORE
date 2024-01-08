@@ -10,7 +10,7 @@ cModel Technology
 Z0 dC:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/I2C/simulation/modelsim
 vclock_generator
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1704666858
+Z2 !s110 1704734915
 !i10b 1
 !s100 4g?OoAP>@CLRM_7a?9:9J1
 I3X^gBX8eMhD^C<O[2I8Mg2
@@ -26,24 +26,24 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1704666858.000000
+Z5 !s108 1704734915.000000
 !s107 C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules/clock_generator.v|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules|C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules/clock_generator.v|
 !i113 1
 Z6 o-sv -work work
-!s92 -sv -work work +incdir+C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules
-Z7 tCvgOpt 0
+Z7 !s92 -sv -work work +incdir+C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules
+Z8 tCvgOpt 0
 vI2C_CORE
 R1
 R2
 !i10b 1
-!s100 76nZ4Ha4EMig^jgzL=>:L3
-Ih>niP@j39V46T3InB9]e=2
+!s100 WI24iolU=OYQEbNWAOZBD3
+I<Cd:>D028D]mBgmk=7mNS3
 R3
 !s105 I2C_CORE_v_unit
 S1
 R0
-w1704653165
+w1704711978
 8C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Top_files/I2C_CORE.v
 FC:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Top_files/I2C_CORE.v
 L0 1
@@ -57,10 +57,10 @@ R5
 !i113 1
 R6
 !s92 -sv -work work +incdir+C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Top_files
-R7
+R8
 n@i2@c_@c@o@r@e
 vI2C_CORE_vlg_tst
-!s110 1704666872
+!s110 1704734931
 !i10b 1
 !s100 dP6OBRcSN8_?i``h8^JH]0
 IEMR6UJ1;^I_E_BDb`z9>83
@@ -74,10 +74,35 @@ R4
 r1
 !s85 0
 31
-!s108 1704666872.000000
+!s108 1704734931.000000
 !s107 C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/I2C/simulation/modelsim/I2C_CORE.vt|
 !s90 -reportprogress|300|-work|work|C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/I2C/simulation/modelsim/I2C_CORE.vt|
 !i113 1
 o-work work
-R7
+R8
 n@i2@c_@c@o@r@e_vlg_tst
+vi2c_master_controller
+R1
+R2
+!i10b 1
+!s100 R4ZhiG;?<L[:KBUfKMG=_2
+IN`=c;4UlXYj;Xih05EBa52
+R3
+!s105 i2c_master_controller_v_unit
+S1
+R0
+w1704712650
+8C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules/i2c_master_controller.v
+FC:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules/i2c_master_controller.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules/i2c_master_controller.v|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules|C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules/i2c_master_controller.v|
+!i113 1
+R6
+R7
+R8

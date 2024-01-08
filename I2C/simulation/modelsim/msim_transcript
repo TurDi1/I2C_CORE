@@ -12,48 +12,52 @@
 # 
 # vlog -sv -work work +incdir+C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Top_files {C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Top_files/I2C_CORE.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:34:18 on Jan 08,2024
+# Start time: 20:28:35 on Jan 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Top_files" C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Top_files/I2C_CORE.v 
 # -- Compiling module I2C_CORE
 # 
 # Top level modules:
 # 	I2C_CORE
-# End time: 01:34:18 on Jan 08,2024, Elapsed time: 0:00:00
+# End time: 20:28:35 on Jan 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules {C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules/clock_generator.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:34:18 on Jan 08,2024
+# Start time: 20:28:35 on Jan 08,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules" C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules/clock_generator.v 
 # -- Compiling module clock_generator
 # 
 # Top level modules:
 # 	clock_generator
-# End time: 01:34:18 on Jan 08,2024, Elapsed time: 0:00:00
+# End time: 20:28:35 on Jan 08,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules {C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules/i2c_master_controller.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:28:35 on Jan 08,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules" C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/sources/Modules/i2c_master_controller.v 
+# -- Compiling module i2c_master_controller
+# 
+# Top level modules:
+# 	i2c_master_controller
+# End time: 20:28:35 on Jan 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 vlog -reportprogress 300 -work work C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/I2C/simulation/modelsim/I2C_CORE.vt
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:34:32 on Jan 08,2024
+# Start time: 20:28:51 on Jan 08,2024
 # vlog -reportprogress 300 -work work C:/Users/TurDi/Desktop/I2C_CORE-main/I2C_CORE-main/I2C/simulation/modelsim/I2C_CORE.vt 
 # -- Compiling module I2C_CORE_vlg_tst
 # 
 # Top level modules:
 # 	I2C_CORE_vlg_tst
-# End time: 01:34:32 on Jan 08,2024, Elapsed time: 0:00:00
+# End time: 20:28:51 on Jan 08,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vsim work.I2C_CORE_vlg_tst
 # vsim work.I2C_CORE_vlg_tst 
-# Start time: 01:34:35 on Jan 08,2024
+# Start time: 20:28:56 on Jan 08,2024
 # Loading work.I2C_CORE_vlg_tst
 # Loading sv_std.std
 # Loading work.I2C_CORE
 # Loading work.clock_generator
-add wave -position insertpoint  \
-sim:/I2C_CORE_vlg_tst/i1/clock_generator/reset \
-sim:/I2C_CORE_vlg_tst/i1/clock_generator/clk \
-sim:/I2C_CORE_vlg_tst/i1/clock_generator/freq_mode \
-sim:/I2C_CORE_vlg_tst/i1/clock_generator/output_clk \
-sim:/I2C_CORE_vlg_tst/i1/clock_generator/output_clk_6x
-run
-# End time: 01:37:22 on Jan 08,2024, Elapsed time: 0:02:47
+# Loading work.i2c_master_controller
+# End time: 20:29:06 on Jan 08,2024, Elapsed time: 0:00:10
 # Errors: 0, Warnings: 0

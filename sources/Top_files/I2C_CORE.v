@@ -22,7 +22,8 @@ inout          sda;        // Serial data inout
 
 //==================
 // Wire's, reg's etc
-
+wire     bus_clock;
+wire     bus_clock6x;
 
 //==================
 // Assignments
@@ -34,8 +35,22 @@ clock_generator clock_generator (
    .reset         (reset),
    .clk           (clk),
    .freq_mode     (mode),
-   .output_clk    (),
-   .output_clk_6x ()
+   .output_clk    (bus_clock),
+   .output_clk_6x (bus_clock6x)
+);
+
+i2c_master_controller i2c_master (
+   .reset         (reset),
+   .clk           (clk),
+   .bus_clock     (bus_clock),
+   .bus_clock6x   (bus_clock6x),
+   .read          (),
+   .data_in       (),
+   .empty_tx      (),   
+   .write         (),
+   .data_out      (),   
+   .scl           (scl),
+   .sda           (sda)
 );
 //
 endmodule 
