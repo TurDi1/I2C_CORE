@@ -37,12 +37,29 @@ inout          sda;           // Serial data inout
 
 //==================
 // Wire's, reg's etc
+reg				Sr_reg;
+reg				clear_;
+
+//==================
+// Parameters
 
 
 //==================
 // Assignments
 assign scl = bus_clock;
+assign busy = Sr_reg;
 
+//==================
+// Sr storage logic
+always @ (posedge clk or negedge reset or negedge clear_)
+begin
+	if (!reset | !clear_)
+		Sr_reg	<= 0;
+	else if (Sr)
+		Sr_reg	<= 1;
+	else
+		Sr_reg	<= Sr_reg;
+end
 
 //
 endmodule 
