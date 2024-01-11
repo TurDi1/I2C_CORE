@@ -40,8 +40,19 @@ inout          sda;           // Serial data inout
 reg				Sr_reg;
 reg				clear_;
 
+reg      [2:0] state;
+
+reg      [7:0] address_rw_reg;
+reg      [7:0] data_byte_reg;
+reg      [7:0] shift_reg;
+
+reg      [2:0] clock6x_counter;
+
+
 //==================
 // Parameters
+parameter   idle = 0;
+parameter   start = 1;
 
 
 //==================
@@ -49,17 +60,59 @@ reg				clear_;
 assign scl = bus_clock;
 assign busy = Sr_reg;
 
+//===================
+// Port logic section
+
+
 //==================
 // Sr storage logic
-always @ (posedge clk or negedge reset or negedge clear_)
+always @ (posedge clk or negedge reset)
 begin
-	if (!reset | !clear_)
-		Sr_reg	<= 0;
-	else if (Sr)
-		Sr_reg	<= 1;
-	else
-		Sr_reg	<= Sr_reg;
+   if (!reset | !clear_)
+      Sr_reg	<= 0;
+   else if (clk)
+   begin
+      if (Sr)
+         Sr_reg	<= 1;
+      else   
+         Sr_reg   <= Sr_reg;
+   end      
+   else
+      Sr_reg	<= Sr_reg;         
+   end      
 end
+
+//===================
+// FSM
+//always @ (posedge clk or negedge reset)
+//begin
+//   if (!reset)
+//      state <= idle;
+//   else
+//      case (state)
+//      // Idle state
+//      idle: begin
+//         
+//      end
+//      // start state
+//      start: begin
+//         
+//      end
+//      endcase
+//end
+
+//===========================
+// Counter logic for 6x clock
+always @ (posedge bus_clock6x or negedge reset)
+begin
+   if (!reset)
+      clock6x_counter   <= 0;
+   else if (en)
+      clock6x_counter   <= clock6x_counter + 1;
+   else
+      clock6x_counter   <= clock6x_counter;   
+end
+
 
 //
 endmodule 
