@@ -40,10 +40,12 @@ inout          sda;           // Serial data inout
 reg				Sr_reg;
 reg				clear_Sr_;
 
-reg      [2:0] state;
+reg      [2:0] state;            // State register that storage current state of FSM
 
 reg      [7:0] address_rw_reg;
 reg      [7:0] data_byte_reg;
+
+reg      [3:0] bit_counter;      // Counter with value of current sended or received bits (with ACK bit too)
 reg      [7:0] shift_reg;
 
 reg      [2:0] clock6x_counter;
@@ -63,7 +65,6 @@ parameter   start = 1;
 assign sda = sda_reg ? 1'bz : 1'b0;
 assign scl = scl_reg ? 1'bz : 1'b0;
 
-
 //==================
 // Sr storage logic
 always @ (posedge clk or negedge clear_Sr_)
@@ -77,11 +78,9 @@ begin
    begin
       if (Sr)
          Sr_reg	<= 1;
-      else   
-         Sr_reg   <= Sr_reg;
    end      
    else
-      Sr_reg	<= Sr_reg;    
+      Sr_reg	<= Sr_reg;
 end
 
 //===================
@@ -95,7 +94,7 @@ begin
       // Idle state
       idle: begin
          clock6x_reset_	<= 0;
-			clear_Sr_		<= 1;	// In idle state we don't reset Sr flip-flop 
+			clear_Sr_		<= 1;	// In idle state we don't reset Sr flip-flop // this value is not correct because Sr flip-flop is not initialize
 			
 			sda_reg			<= 1;
 			scl_reg			<= 1;
