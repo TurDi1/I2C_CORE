@@ -18,7 +18,7 @@
 // suit user's needs .Comments are provided in each section to help the user    
 // fill out necessary details.                                                  
 // *****************************************************************************
-// Generated on "01/06/2024 09:00:23"
+// Generated on "01/16/2024 23:36:07"
                                                                                 
 // Verilog Test Bench template for design : I2C_CORE
 // 
@@ -31,6 +31,8 @@ module I2C_CORE_vlg_tst();
 // general purpose registers
 reg eachvec;
 // test vector input registers
+reg Sr;
+reg [7:0] address_rw;
 reg clk;
 reg [7:0] data_in;
 reg [1:0] mode;
@@ -40,7 +42,9 @@ reg treg_scl;
 reg treg_sda;
 reg wr_data;
 // wires                                               
+wire busy;
 wire [7:0]  data_out;
+wire empty_rx;
 wire scl;
 wire sda;
 
@@ -49,9 +53,13 @@ assign scl = treg_scl;
 assign sda = treg_sda;
 I2C_CORE i1 (
 // port map - connection between master ports and signals/registers   
+	.Sr(Sr),
+	.address_rw(address_rw),
+	.busy(busy),
 	.clk(clk),
 	.data_in(data_in),
 	.data_out(data_out),
+	.empty_rx(empty_rx),
 	.mode(mode),
 	.rd_data(rd_data),
 	.reset(reset),
@@ -61,39 +69,21 @@ I2C_CORE i1 (
 );
 
 always
-   #20 clk <= ~clk;
-   
-always
-   #30000 mode <= mode + 1;
-   
+#20   clk <= ~clk;
+
 initial                                                
 begin                                                  
-   reset <= 0;
-   clk   <= 0;
-   mode  <= 2'b00;
-#1500
-   reset <= 1;
-
-#30000
-	reset	<= 0;
-#10
-	reset	<= 1;
-
-#30000
-	reset	<= 0;
-#10
-	reset	<= 1;
-
-#30000
-	reset	<= 0;
-#10
-	reset	<= 1;
-
-#30000
-	reset	<= 0;
-#10
-	reset	<= 1;	
-   
+   reset    <= 0;
+   clk      <= 0;
+   wr_data  <= 0;
+#100
+   reset       <= 1;
+   address_rw  <= 8'b01011110;   
+   data_in     <= 8'b11001101;
+#20
+   wr_data  <= 1;
+#20
+   wr_data  <= 0;
 end                                                    
 always                                                 
 // optional sensitivity list                           

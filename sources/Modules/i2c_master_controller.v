@@ -56,8 +56,10 @@ reg				sda_reg;
 
 //==================
 // Parameters
-parameter   idle = 0;
+parameter   idle  = 0;
 parameter   start = 1;
+parameter   tx    = 2;
+parameter   rx    = 3;
 
 
 //==================
@@ -94,11 +96,10 @@ begin
       // Idle state
       idle: begin
          clock6x_reset_	<= 0;
-			clear_Sr_		<= 1;	// In idle state we don't reset Sr flip-flop // this value is not correct because Sr flip-flop is not initialize
-			
+//			clear_Sr_		<= 1;	// In idle state we don't reset Sr flip-flop // this value is not correct because Sr flip-flop is not initialize
 			sda_reg			<= 1;
 			scl_reg			<= 1;
-			
+         //==================
 			if (!empty_tx)
 			begin
 				state				<= start;
@@ -112,14 +113,36 @@ begin
       end
       // Start state
       start: begin
-			clock6x_reset_	<= 1;
-			clear_Sr_		<= 1;
-
-         if ()
+//			clear_Sr_		<= 1;
+         //==================
+         if (clock6x_counter == 2)
+         begin
+            sda_reg  <= 0;
+            scl_reg  <= scl_reg;
+         end   
+         else if (clock6x_counter == 5)
+         begin
+            sda_reg        <= sda_reg;
+            scl_reg        <= 0;
+            clock6x_reset_	<= 0;
+            state          <= address_rw_reg[0] ? rx : tx;
+         end
          else
-         scl_reg        <= 1;
-         
-//         state				<= start;
+         begin
+            sda_reg        <= sda_reg;
+            scl_reg        <= scl_reg;
+            clock6x_reset_	<= 1;
+         end
+      end
+      tx: begin
+         sda_reg        <= 1;
+         scl_reg        <= 1;      
+         state          <= idle;
+      end
+      rx: begin
+         sda_reg        <= 1;
+         scl_reg        <= 1;      
+         state          <= idle;         
       end
       endcase
 end

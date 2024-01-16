@@ -40,6 +40,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "sda",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
 					"strict" : false
 				},
@@ -48,11 +52,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "wr_data",
+					"strict" : false
+				},
+				{
 					"name" : "mode[1]",
 					"strict" : false
 				},
 				{
 					"name" : "mode[0]",
+					"strict" : false
+				},
+				{
+					"name" : "address_rw[0]",
 					"strict" : false
 				}
 			]
