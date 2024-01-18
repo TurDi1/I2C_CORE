@@ -51,6 +51,8 @@ reg      [7:0] shift_reg;
 reg      [2:0] clock6x_counter;
 reg				clock6x_reset_;
 
+reg            read_reg;
+
 reg				scl_reg;
 reg				sda_reg;
 
@@ -64,6 +66,8 @@ parameter   rx    = 3;
 
 //==================
 // Assignments
+assign read = read_reg;
+
 assign sda = sda_reg ? 1'bz : 1'b0;
 assign scl = scl_reg ? 1'bz : 1'b0;
 
@@ -93,17 +97,19 @@ begin
       state <= idle;
    else
       case (state)
-      // Idle state
+      //=== Idle state
       idle: begin
          clock6x_reset_	<= 0;
 //			clear_Sr_		<= 1;	// In idle state we don't reset Sr flip-flop // this value is not correct because Sr flip-flop is not initialize
+         read_reg       <= 0;
 			sda_reg			<= 1;
 			scl_reg			<= 1;
          //==================
 			if (!empty_tx)
 			begin
-				state				<= start;
-				address_rw_reg	<= address_rw;	
+            read_reg       <= 1;
+            address_rw_reg	<= address_rw;
+				state				<= start;					
 			end
 			else
 			begin
@@ -111,17 +117,21 @@ begin
 				state				<= idle;
 			end				
       end
-      // Start state
+      //==== Start state
       start: begin
 //			clear_Sr_		<= 1;
+         read_reg       <= 0;
+         data_byte_reg  <= data_in;
          //==================
          if (clock6x_counter == 2)
          begin
+            // sda change 1->0
             sda_reg  <= 0;
             scl_reg  <= scl_reg;
          end   
          else if (clock6x_counter == 5)
          begin
+            // scl change 1->0
             sda_reg        <= sda_reg;
             scl_reg        <= 0;
             clock6x_reset_	<= 0;
@@ -137,7 +147,7 @@ begin
       tx: begin
          sda_reg        <= 1;
          scl_reg        <= 1;      
-         state          <= idle;
+         state          <= tx;
       end
       rx: begin
          sda_reg        <= 1;

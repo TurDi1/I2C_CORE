@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 d/home/turdi/Quartus_projects/I2C/simulation/modelsim
 va_graycounter
-Z1 !s110 1705438505
+Z1 !s110 1705609495
 !i10b 1
 !s100 7RL@7]^Mkb[^0^A4A<DHg3
 IREZ>K0XRE8lcX`3h1Am:M3
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1705438503.000000
+Z7 !s108 1705609493.000000
 Z8 !s107 /home/turdi/intelFPGA/18.1/quartus/eda/sim_lib/altera_mf.v|
 Z9 !s90 -reportprogress|300|-work|work|/home/turdi/intelFPGA/18.1/quartus/eda/sim_lib/altera_mf.v|
 !i113 1
@@ -240,7 +240,7 @@ R9
 R10
 R11
 valtaccumulate
-Z12 !s110 1705438504
+Z12 !s110 1705609494
 !i10b 1
 !s100 ]J^>>M@KIe6:;k?@cL6jK0
 ISVKGEXU@V7G>d:TV2aAEb3
@@ -261,7 +261,7 @@ R9
 R10
 R11
 valtclklock
-R12
+R1
 !i10b 1
 !s100 dZP2fY7[X6OBenFPi2M3>2
 I[0ATW<oM7Q82Vg1O:HQZ82
@@ -282,7 +282,7 @@ R9
 R10
 R11
 valtddio_bidir
-R12
+R1
 !i10b 1
 !s100 d6h;ie5E87J34ZiR_`WGP0
 If=0=1`o?`b8cl`Q<fG3`z2
@@ -303,7 +303,7 @@ R9
 R10
 R11
 valtddio_in
-R12
+R1
 !i10b 1
 !s100 RYI1C30fJj7N8Y0J5dRbG3
 IzbB_A=@AR5GHXcdXOe<2M0
@@ -324,7 +324,7 @@ R9
 R10
 R11
 valtddio_out
-R12
+R1
 !i10b 1
 !s100 S];mG5k@6gz9bKEQ>6@]V2
 IEY39U8R7Wl[1Ad6Ubh7P^2
@@ -345,7 +345,7 @@ R9
 R10
 R11
 valtdpram
-R12
+R1
 !i10b 1
 !s100 BE726jY[MoUWTU>>?R`hZ1
 IV]gB5e=0POHDS?;eSo7o22
@@ -366,7 +366,7 @@ R9
 R10
 R11
 vALTERA_DEVICE_FAMILIES
-Z13 !s110 1705438503
+Z13 !s110 1705609493
 !i10b 1
 !s100 LWTeFO?a^6l3ea7?@d<9?0
 IG`al2N?DZ_[CkTbALdT2d1
@@ -516,7 +516,7 @@ R9
 R10
 R11
 valtfp_mult
-R12
+R1
 !i10b 1
 !s100 c9dLG_`KcV2Q;PQb:iUEk1
 Ii<`U>lcX;PO8@ZU958]b:2
@@ -600,7 +600,7 @@ R9
 R10
 R11
 valtmult_add
-R12
+R1
 !i10b 1
 !s100 <>@[FFHS;IjA6YnRoVfJm3
 IPQj22^98hRPNKR1Imk=8M3
@@ -726,7 +726,7 @@ R9
 R10
 R11
 valtsqrt
-R12
+R1
 !i10b 1
 !s100 a[5V9KX9=mLzMafI5YMk83
 IIW6GNY?DkY@SIaQ2T39Ci0
@@ -789,7 +789,7 @@ R9
 R10
 R11
 valtsyncram
-R12
+R1
 !i10b 1
 !s100 K:Qc=Y0o3h>fB?4Q3W7c?1
 I_Yk56Z]4XEFd1dQVEa3?L1
@@ -831,7 +831,7 @@ R9
 R10
 R11
 varm_m_cntr
-R13
+R12
 !i10b 1
 !s100 aE>Dk`dHV;WL1F5DL`IJe0
 IH9bg27BznXcjQY:hz5>FO1
@@ -852,7 +852,7 @@ R9
 R10
 R11
 varm_n_cntr
-R13
+R12
 !i10b 1
 !s100 XVOhjdU?l`B?8Uf;M45`N2
 ITCMMz5LlU=JZ22JLm8[[Y0
@@ -873,7 +873,7 @@ R9
 R10
 R11
 varm_scale_cntr
-R13
+R12
 !i10b 1
 !s100 j]gN?cGBNo4nUKi^cZIh[0
 IEjibIkecAIP7_eMKSNSQT0
@@ -958,7 +958,7 @@ R10
 R11
 vclock_generator
 Z14 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z15 !s110 1705437638
+Z15 !s110 1705609481
 !i10b 1
 !s100 4g?OoAP>@CLRM_7a?9:9J1
 Igd>IaRE5VVl6;9d;fje1a2
@@ -974,7 +974,7 @@ R6
 r1
 !s85 0
 31
-Z17 !s108 1705437638.000000
+Z17 !s108 1705609481.000000
 !s107 /home/turdi/Quartus_projects/sources/Modules/clock_generator.v|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/turdi/Quartus_projects/sources/Modules|/home/turdi/Quartus_projects/sources/Modules/clock_generator.v|
 !i113 1
@@ -1326,7 +1326,7 @@ R6
 r1
 !s85 0
 31
-!s108 1705438505.000000
+!s108 1705609495.000000
 !s107 /home/turdi/Quartus_projects/I2C/simulation/modelsim/I2C_CORE.vt|
 !s90 -reportprogress|300|-work|work|/home/turdi/Quartus_projects/I2C/simulation/modelsim/I2C_CORE.vt|
 !i113 1
@@ -1337,13 +1337,13 @@ vi2c_master_controller
 R14
 R15
 !i10b 1
-!s100 =ch8<gfYXYYFlE1V>87;U1
-I_kRXn?]=1zRM@lTlb9Y0^1
+!s100 iW1WIDf]^:dSIK9[[zeVY3
+ISLH`4H54faaJ36GBWeQ?l0
 R2
 !s105 i2c_master_controller_v_unit
 S1
 R0
-w1705437170
+w1705609399
 8/home/turdi/Quartus_projects/sources/Modules/i2c_master_controller.v
 F/home/turdi/Quartus_projects/sources/Modules/i2c_master_controller.v
 L0 1
@@ -1533,7 +1533,7 @@ R10
 R11
 n@m@f_pll_reg
 vMF_stratix_pll
-R13
+R12
 !i10b 1
 !s100 kITDCAAk7nE?EU[@=@9Oo1
 II[0;iC<V7I0a_LOnh3OJ52
@@ -1555,7 +1555,7 @@ R10
 R11
 n@m@f_stratix_pll
 vMF_stratixii_pll
-R13
+R12
 !i10b 1
 !s100 m<j8S?b80d7m:cRfTMSCR0
 IFKD@0AL4YChAY1gbn5=W:1
@@ -1998,7 +1998,7 @@ R9
 R10
 R11
 vttn_m_cntr
-R13
+R12
 !i10b 1
 !s100 ;3NK]8TY<L]eQ[IJY0gF32
 IPAZEE=O0KAM1BbYm9fQi=3
@@ -2019,7 +2019,7 @@ R9
 R10
 R11
 vttn_n_cntr
-R13
+R12
 !i10b 1
 !s100 7nCN0ZiXcEmbIBT5Y>_4a1
 IkmIZfAdk9j7iN]EXz0=7K3
@@ -2040,7 +2040,7 @@ R9
 R10
 R11
 vttn_scale_cntr
-R13
+R12
 !i10b 1
 !s100 _jZZ0@3D`H8_VG516F<O_0
 I15>:SKQDAkSd>bCe699Li1
