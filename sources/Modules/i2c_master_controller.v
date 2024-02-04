@@ -32,8 +32,8 @@ input          empty_tx;      // Empty signal input from FIFO TX
 output         write;         // Write signal output to FIFO RX
 output   [7:0] data_out;      // Data bus to FIFO RX
 output         busy;          // Output busy signal from controller
-inout          scl;           // Serial clock inout
-inout          sda;           // Serial data inout
+inout tri      scl;           // Serial clock inout
+inout tri      sda;           // Serial data inout
 
 //==================
 // Wire's, reg's etc
@@ -47,14 +47,17 @@ reg      [7:0] data_byte_reg;
 
 reg      [3:0] bit_counter;      // Counter with value of current sended or received bits (with ACK bit too)
 reg      [7:0] shift_reg;
+reg            shifter_enable;
 
 reg      [2:0] clock6x_counter;
 reg				clock6x_reset_;
 
 reg            read_reg;
+reg            busy_reg;
 
 reg				scl_reg;
 reg				sda_reg;
+reg            enable;
 
 //==================
 // Parameters
@@ -67,9 +70,10 @@ parameter   rx    = 3;
 //==================
 // Assignments
 assign read = read_reg;
+assign busy = busy_reg;
 
-assign sda = sda_reg ? 1'bz : 1'b0;
-assign scl = scl_reg ? 1'bz : 1'b0;
+assign sda = enable ? sda_reg : 1'bZ;
+assign scl = enable ? scl_reg : 1'bZ;
 
 //==================
 // Sr storage logic
@@ -97,13 +101,18 @@ begin
       state <= idle;
    else
       case (state)
-      //=== Idle state
+      //==== Idle state
       idle: begin
          clock6x_reset_	<= 0;
 //			clear_Sr_		<= 1;	// In idle state we don't reset Sr flip-flop // this value is not correct because Sr flip-flop is not initialize
          read_reg       <= 0;
 			sda_reg			<= 1;
 			scl_reg			<= 1;
+         busy_reg       <= 0;
+         //
+         enable         <= 0;
+         //
+         shifter_enable <= 0;
          //==================
 			if (!empty_tx)
 			begin
@@ -121,6 +130,11 @@ begin
       start: begin
 //			clear_Sr_		<= 1;
          read_reg       <= 0;
+         busy_reg       <= 1;
+         //
+         enable         <= 1;
+         //
+         shifter_enable <= 0;
          data_byte_reg  <= data_in;
          //==================
          if (clock6x_counter == 2)
@@ -144,15 +158,23 @@ begin
             clock6x_reset_	<= 1;
          end
       end
+      //==== TX state
       tx: begin
-         sda_reg        <= 1;
-         scl_reg        <= 1;      
+         sda_reg        <= 1;          // Redirect this reg to shifter
+         scl_reg        <= bus_clock;  // Redirect this reg to bus_clock
+         busy_reg       <= busy_reg;
+         //
+         enable         <= 1;
+         //==================
+         shifter_enable <= 1;
          state          <= tx;
       end
+      //==== RX state
       rx: begin
          sda_reg        <= 1;
-         scl_reg        <= 1;      
-         state          <= idle;         
+         scl_reg        <= 1;
+         busy_reg       <= busy_reg;
+         state          <= idle;
       end
       endcase
 end
@@ -169,6 +191,11 @@ begin
       clock6x_counter   <= clock6x_counter;   
 end
 
-
+//==========================
+// 
+always @ (posedge bus_clock)
+begin
+   
+end
 //
 endmodule 

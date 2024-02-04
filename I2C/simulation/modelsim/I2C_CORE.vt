@@ -73,9 +73,11 @@ always
 
 initial                                                
 begin                                                  
-   reset    <= 0;
-   clk      <= 0;
-   wr_data  <= 0;
+   reset       <= 0;
+   clk         <= 0;
+   wr_data     <= 0;
+   data_in     <= 0;
+   address_rw  <= 0;
 #100
    reset       <= 1;
    address_rw  <= 8'b01011110;   

@@ -36,6 +36,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "busy",
+					"strict" : false
+				},
+				{
 					"name" : "scl",
 					"strict" : false
 				},
@@ -56,15 +60,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "address_rw[0]",
+					"strict" : false
+				},
+				{
 					"name" : "mode[1]",
 					"strict" : false
 				},
 				{
 					"name" : "mode[0]",
-					"strict" : false
-				},
-				{
-					"name" : "address_rw[0]",
 					"strict" : false
 				}
 			]

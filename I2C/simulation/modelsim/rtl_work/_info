@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 d/home/turdi/Quartus_projects/I2C/simulation/modelsim
 va_graycounter
-Z1 !s110 1705609495
+Z1 !s110 1707081318
 !i10b 1
 !s100 7RL@7]^Mkb[^0^A4A<DHg3
 IREZ>K0XRE8lcX`3h1Am:M3
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1705609493.000000
+Z7 !s108 1707081316.000000
 Z8 !s107 /home/turdi/intelFPGA/18.1/quartus/eda/sim_lib/altera_mf.v|
 Z9 !s90 -reportprogress|300|-work|work|/home/turdi/intelFPGA/18.1/quartus/eda/sim_lib/altera_mf.v|
 !i113 1
@@ -240,7 +240,7 @@ R9
 R10
 R11
 valtaccumulate
-Z12 !s110 1705609494
+Z12 !s110 1707081317
 !i10b 1
 !s100 ]J^>>M@KIe6:;k?@cL6jK0
 ISVKGEXU@V7G>d:TV2aAEb3
@@ -366,7 +366,7 @@ R9
 R10
 R11
 vALTERA_DEVICE_FAMILIES
-Z13 !s110 1705609493
+R12
 !i10b 1
 !s100 LWTeFO?a^6l3ea7?@d<9?0
 IG`al2N?DZ_[CkTbALdT2d1
@@ -388,7 +388,7 @@ R10
 R11
 n@a@l@t@e@r@a_@d@e@v@i@c@e_@f@a@m@i@l@i@e@s
 vALTERA_MF_HINT_EVALUATION
-R13
+R12
 !i10b 1
 !s100 PH5i_RH6C@2cMRnc4>ae12
 ICFdYz^ZOm^l>iK_nG@4[[2
@@ -410,7 +410,7 @@ R10
 R11
 n@a@l@t@e@r@a_@m@f_@h@i@n@t_@e@v@a@l@u@a@t@i@o@n
 vALTERA_MF_MEMORY_INITIALIZATION
-R13
+R12
 !i10b 1
 !s100 nTma^h04MOBz8;HdmmAdW1
 I`1LH0eeY;GEzRgaLH:o`h3
@@ -957,8 +957,8 @@ R9
 R10
 R11
 vclock_generator
-Z14 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z15 !s110 1705609481
+Z13 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z14 !s110 1707081301
 !i10b 1
 !s100 4g?OoAP>@CLRM_7a?9:9J1
 Igd>IaRE5VVl6;9d;fje1a2
@@ -966,7 +966,7 @@ R2
 !s105 clock_generator_v_unit
 S1
 R0
-Z16 w1705004380
+Z15 w1705004380
 8/home/turdi/Quartus_projects/sources/Modules/clock_generator.v
 F/home/turdi/Quartus_projects/sources/Modules/clock_generator.v
 L0 1
@@ -974,12 +974,12 @@ R6
 r1
 !s85 0
 31
-Z17 !s108 1705609481.000000
+Z16 !s108 1707081301.000000
 !s107 /home/turdi/Quartus_projects/sources/Modules/clock_generator.v|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/turdi/Quartus_projects/sources/Modules|/home/turdi/Quartus_projects/sources/Modules/clock_generator.v|
 !i113 1
-Z18 o-sv -work work
-Z19 !s92 -sv -work work +incdir+/home/turdi/Quartus_projects/sources/Modules
+Z17 o-sv -work work
+Z18 !s92 -sv -work work +incdir+/home/turdi/Quartus_projects/sources/Modules
 R11
 vcycloneiiigl_post_divider
 R12
@@ -1150,7 +1150,7 @@ R9
 R10
 R11
 vdffp
-R13
+R12
 !i10b 1
 !s100 SnNjJNaU3KC[OThjodVFi2
 I[0Z`zzQZdMdk[=77JGelS3
@@ -1192,8 +1192,8 @@ R9
 R10
 R11
 vFIFO_RX
-R14
-R15
+R13
+!s110 1707081302
 !i10b 1
 !s100 07eX6Glgk>W:88eL0I_HW1
 Im0Qm@W;@O[Y`JQ]:3^hUh0
@@ -1201,25 +1201,25 @@ R2
 !s105 FIFO_RX_v_unit
 S1
 R0
-R16
+R15
 8/home/turdi/Quartus_projects/sources/IP/FIFO_RX.v
 F/home/turdi/Quartus_projects/sources/IP/FIFO_RX.v
-Z20 L0 39
+Z19 L0 39
 R6
 r1
 !s85 0
 31
-R17
+!s108 1707081302.000000
 !s107 /home/turdi/Quartus_projects/sources/IP/FIFO_RX.v|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/turdi/Quartus_projects/sources/IP|/home/turdi/Quartus_projects/sources/IP/FIFO_RX.v|
 !i113 1
-R18
-Z21 !s92 -sv -work work +incdir+/home/turdi/Quartus_projects/sources/IP
+R17
+Z20 !s92 -sv -work work +incdir+/home/turdi/Quartus_projects/sources/IP
 R11
 n@f@i@f@o_@r@x
 vFIFO_TX
+R13
 R14
-R15
 !i10b 1
 !s100 67Fha2L?_eLla3>7PXUde2
 IEm6gj8``N@cjAh9D_>TbK1
@@ -1227,20 +1227,20 @@ R2
 !s105 FIFO_TX_v_unit
 S1
 R0
-R16
+R15
 8/home/turdi/Quartus_projects/sources/IP/FIFO_TX.v
 F/home/turdi/Quartus_projects/sources/IP/FIFO_TX.v
-R20
+R19
 R6
 r1
 !s85 0
 31
-R17
+R16
 !s107 /home/turdi/Quartus_projects/sources/IP/FIFO_TX.v|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/turdi/Quartus_projects/sources/IP|/home/turdi/Quartus_projects/sources/IP/FIFO_TX.v|
 !i113 1
-R18
-R21
+R17
+R20
 R11
 n@f@i@f@o_@t@x
 vflexible_lvds_rx
@@ -1286,8 +1286,8 @@ R9
 R10
 R11
 vI2C_CORE
+R13
 R14
-R15
 !i10b 1
 !s100 lXXOPBG5HVll:30jbfQ]>0
 IgBIijj@H[E9?TK[TWW:^X1
@@ -1295,7 +1295,7 @@ R2
 !s105 I2C_CORE_v_unit
 S1
 R0
-R16
+R15
 8/home/turdi/Quartus_projects/sources/Top_files/I2C_CORE.v
 F/home/turdi/Quartus_projects/sources/Top_files/I2C_CORE.v
 L0 1
@@ -1303,11 +1303,11 @@ R6
 r1
 !s85 0
 31
-R17
+R16
 !s107 /home/turdi/Quartus_projects/sources/Top_files/I2C_CORE.v|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/turdi/Quartus_projects/sources/Top_files|/home/turdi/Quartus_projects/sources/Top_files/I2C_CORE.v|
 !i113 1
-R18
+R17
 !s92 -sv -work work +incdir+/home/turdi/Quartus_projects/sources/Top_files
 R11
 n@i2@c_@c@o@r@e
@@ -1326,7 +1326,7 @@ R6
 r1
 !s85 0
 31
-!s108 1705609495.000000
+!s108 1707081318.000000
 !s107 /home/turdi/Quartus_projects/I2C/simulation/modelsim/I2C_CORE.vt|
 !s90 -reportprogress|300|-work|work|/home/turdi/Quartus_projects/I2C/simulation/modelsim/I2C_CORE.vt|
 !i113 1
@@ -1334,16 +1334,16 @@ R10
 R11
 n@i2@c_@c@o@r@e_vlg_tst
 vi2c_master_controller
+R13
 R14
-R15
 !i10b 1
-!s100 iW1WIDf]^:dSIK9[[zeVY3
-ISLH`4H54faaJ36GBWeQ?l0
+!s100 0IgX4I982AR@U2;aVX?7?0
+ITi8e42LIC8JIU<RnVTefi1
 R2
 !s105 i2c_master_controller_v_unit
 S1
 R0
-w1705609399
+w1707078578
 8/home/turdi/Quartus_projects/sources/Modules/i2c_master_controller.v
 F/home/turdi/Quartus_projects/sources/Modules/i2c_master_controller.v
 L0 1
@@ -1351,12 +1351,12 @@ R6
 r1
 !s85 0
 31
-R17
+R16
 !s107 /home/turdi/Quartus_projects/sources/Modules/i2c_master_controller.v|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/turdi/Quartus_projects/sources/Modules|/home/turdi/Quartus_projects/sources/Modules/i2c_master_controller.v|
 !i113 1
+R17
 R18
-R19
 R11
 vjtag_tap_controller
 R1
@@ -1380,7 +1380,7 @@ R9
 R10
 R11
 vlcell
-R13
+!s110 1707081316
 !i10b 1
 !s100 5QGV:R[KdXJ5TR1bkQiUU0
 IVGK]0lO?a67UD`Vl[f0`g3
@@ -1511,7 +1511,7 @@ R10
 R11
 n@m@f_cycloneiiigl_scale_cntr
 vMF_pll_reg
-R13
+R12
 !i10b 1
 !s100 0HDLA_Ae606hC35WQ6^7]2
 Ioz6z<;VJ4lH@<8AX7hWgF3
@@ -1620,7 +1620,7 @@ R9
 R10
 R11
 vpll_iobuf
-R13
+R12
 !i10b 1
 !s100 Y>n^z1AP@XWBOng[;X`=B1
 Ia83j27W6oYX^iFBXBR]P90
@@ -1935,7 +1935,7 @@ R9
 R10
 R11
 vstx_m_cntr
-R13
+R12
 !i10b 1
 !s100 ?>o7Q<XCBPSD4HoGd5:>A0
 InkzbO^WB3eZ0el0T05cz]1
@@ -1956,7 +1956,7 @@ R9
 R10
 R11
 vstx_n_cntr
-R13
+R12
 !i10b 1
 !s100 ?P@b:4DafJ_^m9ka]DFD53
 IKm<3l`K0NW36>n@98T6CJ2
@@ -1977,7 +1977,7 @@ R9
 R10
 R11
 vstx_scale_cntr
-R13
+R12
 !i10b 1
 !s100 a@[2eTC]]LIFm0QFl5WUj2
 I<7YS@Km5X4zMY52Uzeiaf0

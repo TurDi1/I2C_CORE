@@ -11,60 +11,60 @@
 # 
 # vlog -sv -work work +incdir+/home/turdi/Quartus_projects/sources/Top_files {/home/turdi/Quartus_projects/sources/Top_files/I2C_CORE.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:24:41 on Jan 18,2024
+# Start time: 00:15:01 on Feb 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/turdi/Quartus_projects/sources/Top_files" /home/turdi/Quartus_projects/sources/Top_files/I2C_CORE.v 
 # -- Compiling module I2C_CORE
 # 
 # Top level modules:
 # 	I2C_CORE
-# End time: 23:24:41 on Jan 18,2024, Elapsed time: 0:00:00
+# End time: 00:15:01 on Feb 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+/home/turdi/Quartus_projects/sources/Modules {/home/turdi/Quartus_projects/sources/Modules/clock_generator.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:24:41 on Jan 18,2024
+# Start time: 00:15:01 on Feb 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/turdi/Quartus_projects/sources/Modules" /home/turdi/Quartus_projects/sources/Modules/clock_generator.v 
 # -- Compiling module clock_generator
 # 
 # Top level modules:
 # 	clock_generator
-# End time: 23:24:41 on Jan 18,2024, Elapsed time: 0:00:00
+# End time: 00:15:01 on Feb 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+/home/turdi/Quartus_projects/sources/Modules {/home/turdi/Quartus_projects/sources/Modules/i2c_master_controller.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:24:41 on Jan 18,2024
+# Start time: 00:15:01 on Feb 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/turdi/Quartus_projects/sources/Modules" /home/turdi/Quartus_projects/sources/Modules/i2c_master_controller.v 
 # -- Compiling module i2c_master_controller
 # 
 # Top level modules:
 # 	i2c_master_controller
-# End time: 23:24:41 on Jan 18,2024, Elapsed time: 0:00:00
+# End time: 00:15:01 on Feb 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+/home/turdi/Quartus_projects/sources/IP {/home/turdi/Quartus_projects/sources/IP/FIFO_TX.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:24:41 on Jan 18,2024
+# Start time: 00:15:01 on Feb 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/turdi/Quartus_projects/sources/IP" /home/turdi/Quartus_projects/sources/IP/FIFO_TX.v 
 # -- Compiling module FIFO_TX
 # 
 # Top level modules:
 # 	FIFO_TX
-# End time: 23:24:41 on Jan 18,2024, Elapsed time: 0:00:00
+# End time: 00:15:01 on Feb 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+/home/turdi/Quartus_projects/sources/IP {/home/turdi/Quartus_projects/sources/IP/FIFO_RX.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:24:41 on Jan 18,2024
+# Start time: 00:15:02 on Feb 05,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+/home/turdi/Quartus_projects/sources/IP" /home/turdi/Quartus_projects/sources/IP/FIFO_RX.v 
 # -- Compiling module FIFO_RX
 # 
 # Top level modules:
 # 	FIFO_RX
-# End time: 23:24:41 on Jan 18,2024, Elapsed time: 0:00:00
+# End time: 00:15:02 on Feb 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # 
 # stdin: <EOF>
 do /home/turdi/Quartus_projects/I2C/simulation/i2c_master_controller_sim.do
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:24:53 on Jan 18,2024
+# Start time: 00:15:16 on Feb 05,2024
 # vlog -reportprogress 300 -work work /home/turdi/intelFPGA/18.1/quartus/eda/sim_lib/altera_mf.v 
 # -- Compiling module lcell
 # -- Compiling module ALTERA_MF_MEMORY_INITIALIZATION
@@ -194,19 +194,19 @@ do /home/turdi/Quartus_projects/I2C/simulation/i2c_master_controller_sim.do
 # 	alt_fault_injection
 # 	sld_virtual_jtag_basic
 # 	altsource_probe
-# End time: 23:24:55 on Jan 18,2024, Elapsed time: 0:00:02
+# End time: 00:15:18 on Feb 05,2024, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 23:24:55 on Jan 18,2024
+# Start time: 00:15:18 on Feb 05,2024
 # vlog -reportprogress 300 -work work /home/turdi/Quartus_projects/I2C/simulation/modelsim/I2C_CORE.vt 
 # -- Compiling module I2C_CORE_vlg_tst
 # 
 # Top level modules:
 # 	I2C_CORE_vlg_tst
-# End time: 23:24:55 on Jan 18,2024, Elapsed time: 0:00:00
+# End time: 00:15:18 on Feb 05,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim work.I2C_CORE_vlg_tst 
-# Start time: 23:24:55 on Jan 18,2024
+# Start time: 00:15:18 on Feb 05,2024
 # Loading work.I2C_CORE_vlg_tst
 # Loading sv_std.std
 # Loading work.I2C_CORE
@@ -226,24 +226,5 @@ do /home/turdi/Quartus_projects/I2C/simulation/i2c_master_controller_sim.do
 run
 run
 run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-# End time: 23:32:25 on Jan 18,2024, Elapsed time: 0:07:30
+# End time: 00:56:09 on Feb 05,2024, Elapsed time: 0:40:51
 # Errors: 0, Warnings: 7
