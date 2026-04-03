@@ -68,7 +68,7 @@ begin
     @(posedge sys_clk_reg);
     start_cmd_reg       <= 1'b0;
 
-    #10us;
+    #15us;
  
      /*$display("-----------------------------------------------");
     $display("[TB INFO]  WAITING FOR PROGRAM EXECUTION... ");
@@ -132,6 +132,7 @@ scl_generator scl_gen (
 bit_controller DUT (
    .rst_            ( sys_rst_reg ),
    .clk             ( sys_clk_reg ),
+   .mode            ( mode_reg ),
    .start_cmd       ( start_cmd_reg ),
    .stop_cmd        ( stop_cmd_reg ),
    .write_bit_cmd   ( write_bit_cmd_reg ),

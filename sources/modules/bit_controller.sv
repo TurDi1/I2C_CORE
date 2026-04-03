@@ -1,6 +1,7 @@
 module bit_controller (
     rst_,
     clk,
+    mode,
     start_cmd,
     stop_cmd,
     write_bit_cmd,
@@ -20,6 +21,8 @@ module bit_controller (
 //==================================
 input           rst_;               // System reset input
 input           clk;                // System clock input - 100 MHz
+
+input   [1:0]   mode;               // I2C mode setting input bus
 
 // Commands (from byte controller)
 input           start_cmd;          // 
@@ -50,6 +53,9 @@ reg             busy_reg;
 reg             done_reg;
 reg             tick_start_reg;
 reg             sda_drive_low_reg;
+
+reg     [8:0]   t_hd_sta;           // Hold time (repeated) START condition
+reg     [8:0]   fsm_counter;
 
 typedef enum logic [3:0] {
     IDLE,
@@ -100,6 +106,8 @@ begin
         done_reg            <= 0;
         tick_start_reg      <= 0;
         sda_drive_low_reg   <= 0;
+
+        fsm_counter         <= 0;
     end
     else
     begin
@@ -108,6 +116,7 @@ begin
         begin
             done_reg        <= 0;
             busy_reg        <= 0;
+            fsm_counter     <= 0;
             
             // Handling commands
             if (start_cmd)
@@ -144,8 +153,14 @@ begin
         end
         START_C: // Pulling low of scl via generator
         begin
-            tick_start_reg      <= 1;
-            fsm_state           <= DONE;
+            if (fsm_counter == (t_hd_sta - 1))
+            begin
+                fsm_counter     <= 0;
+                tick_start_reg  <= 1;
+                fsm_state       <= DONE;
+            end
+            else
+                fsm_counter     <= fsm_counter + 1;
         end
         STOP_A:
         begin
@@ -199,5 +214,27 @@ begin
         end   
         endcase
     end
+end
+
+always @(*)
+begin
+    case(mode)
+        2'd0:       // 100 kHz mode
+        begin
+            t_hd_sta   = 9'd400;
+           end
+        2'd1:       // 400 kHz mode
+        begin
+            t_hd_sta   = 9'd60;
+        end
+        2'd2:       // 1 MHz mode
+        begin
+            t_hd_sta   = 9'd26;
+        end    
+        default:    // 100 kHz is default freq
+        begin
+            t_hd_sta   = 9'd400;
+        end
+    endcase
 end
 endmodule
