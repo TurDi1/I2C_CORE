@@ -97,7 +97,7 @@ begin
             LOW_PHASE: begin
                 drive_low   <= 1;
 
-                if (fsm_counter == t_low_reg)
+                if (fsm_counter == (t_low_reg - 1))
                 begin
                     fsm_counter <= 0;
                     fsm_state   <= HIGH_PHASE;
@@ -110,7 +110,7 @@ begin
 
                 if (scl_in == 1'b1)
                 begin
-                    if (fsm_counter == t_high_reg)
+                    if (fsm_counter == (t_high_reg - 1))
                         fsm_state   <= DONE;
                     else
                         fsm_counter <= fsm_counter + 1;
