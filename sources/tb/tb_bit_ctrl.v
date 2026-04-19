@@ -6,7 +6,7 @@ module tb_bit_ctrl ();
 //==================================
 parameter CLK_WIDTH       = 5ns;  // 100 MHz
 
-int unsigned success;         // Success simulation variable
+int unsigned success;             // Success simulation variable
 
 //==================================
 //      WIRE'S, REG'S and etc
@@ -63,10 +63,13 @@ begin
 
     system_reset();
 
+    start_cmd();
+
     @(posedge sys_clk_reg);
-    start_cmd_reg       <= 1'b1;
+    stop_cmd_reg        <= 1'b1;
+
     @(posedge sys_clk_reg);
-    start_cmd_reg       <= 1'b0;
+    stop_cmd_reg        <= 1'b0;
 
     #15us;
  
@@ -171,6 +174,53 @@ begin
     $display("TIME:  %t", $realtime);
     $display("----------------------------");
     $display("");
+end
+endtask
+
+task start_cmd;
+begin
+    if ((scl_model != 1'b1) && (sda_model != 1'b1))
+    begin
+        $display("----------------------------");
+        $display("[TB INFO]  BUSES ARE IN INCORRECT STATE!");
+        $display("TIME:  %t", $realtime);
+        $display("----------------------------");
+        $display("");        
+        $finish;
+    end
+    
+    @(posedge sys_clk_reg);
+    start_cmd_reg       <= 1'b1;
+    @(posedge sys_clk_reg);
+    start_cmd_reg       <= 1'b0;
+    
+    fork : start_command_checker
+    begin
+        wait (sda_model == 1'b0);
+        $display("----------------------------");
+        $display("[TB INFO]  SDA turn to LOW!");
+        $display("TIME:  %t", $realtime);
+        $display("----------------------------");
+        $display("");
+
+        wait (scl_model == 1'b0);
+        $display("----------------------------");
+        $display("[TB INFO]  SCL turn to LOW. Start command is worked correct");
+        $display("TIME:  %t", $realtime);
+        $display("----------------------------");
+        $display("");
+        disable start_command_checker;
+    end
+    
+    begin
+        #30us;
+        $display("---------------------------------------------------");
+        $display("[TB ERROR] TIMEOUT: START CMD NOT REACHED TO BUS!");
+        $display("TIME:  %t", $realtime);
+        $display("---------------------------------------------------");
+        $finish;
+    end
+    join_any
 end
 endtask
 endmodule 
