@@ -228,12 +228,12 @@ begin
         2'd1:       // 400 kHz mode
         begin
             t_hd_sta   = 9'd60;
-            t_su_sto   = 9'd60
+            t_su_sto   = 9'd60;
         end
         2'd2:       // 1 MHz mode
         begin
             t_hd_sta   = 9'd26;
-            t_su_sto   = 9'd26
+            t_su_sto   = 9'd26;
         end    
         default:    // 100 kHz is default freq
         begin
