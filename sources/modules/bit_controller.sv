@@ -171,8 +171,14 @@ begin
         end
         STOP_B: // SDA 0 -> 1 while SCL high
         begin
-            sda_drive_low_reg   <= 0; // Release SDA
-            fsm_state           <= STOP_C;
+            if (fsm_counter == (t_su_sto - 1))
+            begin
+                fsm_counter         <= 0;
+                sda_drive_low_reg   <= 0; // Release SDA
+                fsm_state           <= STOP_C;
+            end
+            else
+                fsm_counter     <= fsm_counter + 1;
         end
         STOP_C:
         begin

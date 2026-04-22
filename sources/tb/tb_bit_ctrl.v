@@ -64,14 +64,9 @@ begin
     system_reset();
 
     start_cmd();
+    stop_cmd();
 
-    @(posedge sys_clk_reg);
-    stop_cmd_reg        <= 1'b1;
-
-    @(posedge sys_clk_reg);
-    stop_cmd_reg        <= 1'b0;
-
-    #15us;
+    #10us;
  
      /*$display("-----------------------------------------------");
     $display("[TB INFO]  WAITING FOR PROGRAM EXECUTION... ");
@@ -177,6 +172,46 @@ begin
 end
 endtask
 
+task stop_cmd;
+begin
+    if ((scl_model != 1'b1) && (sda_model != 1'b0))
+    begin
+        $display("----------------------------");
+        $display("[TB INFO]  BUSES ARE IN INCORRECT STATE!");
+        $display("TIME:  %t", $realtime);
+        $display("----------------------------");
+        $display("");        
+        $finish;
+    end
+
+    @(posedge sys_clk_reg);
+    stop_cmd_reg    <= 1'b1;
+    @(posedge sys_clk_reg);
+    stop_cmd_reg    <= 1'b0;
+
+    fork : stop_command_checker
+    begin
+        wait (sda_model == 1'b1);
+        $display("----------------------------");
+        $display("[TB INFO]  SDA turn to HIGH!");
+        $display("TIME:  %t", $realtime);
+        $display("----------------------------");
+        $display("");
+        disable stop_command_checker;
+    end
+    
+    begin
+        #30us;
+        $display("---------------------------------------------------");
+        $display("[TB ERROR] TIMEOUT: STOP CMD NOT REACHED TO BUS!");
+        $display("TIME:  %t", $realtime);
+        $display("---------------------------------------------------");
+        $finish;
+    end
+    join_any    
+end
+endtask
+
 task start_cmd;
 begin
     if ((scl_model != 1'b1) && (sda_model != 1'b1))
@@ -190,9 +225,9 @@ begin
     end
     
     @(posedge sys_clk_reg);
-    start_cmd_reg       <= 1'b1;
+    start_cmd_reg   <= 1'b1;
     @(posedge sys_clk_reg);
-    start_cmd_reg       <= 1'b0;
+    start_cmd_reg   <= 1'b0;
     
     fork : start_command_checker
     begin
