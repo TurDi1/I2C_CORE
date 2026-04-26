@@ -64,38 +64,20 @@ begin
     system_reset();
 
     start_cmd();
-    stop_cmd();
 
-    #10us;
- 
-     /*$display("-----------------------------------------------");
-    $display("[TB INFO]  WAITING FOR PROGRAM EXECUTION... ");
-    $display("TIME:  %t", $realtime);
-    $display("-----------------------------------------------");
+    @(posedge sys_clk_reg);
+    bit_in_reg          <= 1'b1;
+    write_bit_cmd_reg   <= 1'b1;
 
-    fork : waiting_last_instruction
-    begin
-        wait (riscv_single_cycle.instr_addr_o == LAST_INSTR_ADDR);
-        $display("-----------------------------------------------");
-        $display("[TB INFO]  RISCV RECEIVED LAST INSTRUCTION... ");
-        $display("TIME:  %t", $realtime);
-        $display("-----------------------------------------------");
-        $display("");        
-        @(posedge sys_clk_reg);
-        disable waiting_last_instruction;
-    end
+    @(posedge sys_clk_reg);
+    write_bit_cmd_reg   <= 1'b0;
+
+    //stop_cmd();
+
+    #15us;
+
     
-    begin
-        #1000;
-        $display("---------------------------------------------------");
-        $display("[TB ERROR] TIMEOUT: LAST INSTRUCTION NOT REACHED!");
-        $display("TIME:  %t", $realtime);
-        $display("---------------------------------------------------");
-        $finish;
-    end
-    join_any
-    
-    // Checking DPRAM register value with address 0x40
+/*    // Checking DPRAM register value with address 0x40
     if (dual_port_ram.ram[16] == 32'h00000031)
         success = 1;
     else
@@ -193,7 +175,7 @@ begin
     begin
         wait (sda_model == 1'b1);
         $display("----------------------------");
-        $display("[TB INFO]  SDA turn to HIGH!");
+        $display("[TB INFO]  SDA turn to HIGH! Stop command is worked correct");
         $display("TIME:  %t", $realtime);
         $display("----------------------------");
         $display("");
