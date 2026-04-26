@@ -30,6 +30,8 @@ reg                        read_bit_cmd_reg;
 reg                        bit_in_reg;
 wire                       sda_drive_low_wire;
 
+wire                       busy_wire;
+
 assign sda_model = sda_drive_low_wire ? 1'b0 : 1'bz;
 //==================================
 //          SYSTEM CLOCK
@@ -62,15 +64,9 @@ begin
     bit_in_reg          <= 1'b0;
 
     system_reset();
-
     start_cmd();
+    address();
 
-    @(posedge sys_clk_reg);
-    bit_in_reg          <= 1'b1;
-    write_bit_cmd_reg   <= 1'b1;
-
-    @(posedge sys_clk_reg);
-    write_bit_cmd_reg   <= 1'b0;
 
     //stop_cmd();
 
@@ -119,7 +115,7 @@ bit_controller DUT (
    .read_bit_cmd    ( read_bit_cmd_reg ),
    .bit_in          ( bit_in_reg ),
    .bit_out         (  ),
-   .busy            (  ),
+   .busy            ( busy_wire ),
    .done            (  ),
    .tick_start      ( tick_start_wire ),
    .tick_done       ( tick_done_wire ),
@@ -238,6 +234,66 @@ begin
         $finish;
     end
     join_any
+end
+endtask
+
+task address;
+begin
+    wait (busy_wire == 1'b0);
+    @(posedge sys_clk_reg);
+    bit_in_reg          <= 1'b1;
+    write_bit_cmd_reg   <= 1'b1;
+    @(posedge sys_clk_reg);
+    write_bit_cmd_reg   <= 1'b0;
+
+    wait (busy_wire == 1'b0);
+    @(posedge sys_clk_reg);
+    bit_in_reg          <= 1'b1;
+    write_bit_cmd_reg   <= 1'b1;
+    @(posedge sys_clk_reg);
+    write_bit_cmd_reg   <= 1'b0;
+
+    wait (busy_wire == 1'b0);
+    @(posedge sys_clk_reg);
+    bit_in_reg          <= 1'b0;
+    write_bit_cmd_reg   <= 1'b1;
+    @(posedge sys_clk_reg);
+    write_bit_cmd_reg   <= 1'b0;
+    
+    wait (busy_wire == 1'b0);
+    @(posedge sys_clk_reg);
+    bit_in_reg          <= 1'b1;
+    write_bit_cmd_reg   <= 1'b1;
+    @(posedge sys_clk_reg);
+    write_bit_cmd_reg   <= 1'b0;
+
+    wait (busy_wire == 1'b0);
+    @(posedge sys_clk_reg);
+    bit_in_reg          <= 1'b0;
+    write_bit_cmd_reg   <= 1'b1;
+    @(posedge sys_clk_reg);
+    write_bit_cmd_reg   <= 1'b0;
+    
+    wait (busy_wire == 1'b0);
+    @(posedge sys_clk_reg);
+    bit_in_reg          <= 1'b0;
+    write_bit_cmd_reg   <= 1'b1;
+    @(posedge sys_clk_reg);
+    write_bit_cmd_reg   <= 1'b0;
+    
+    wait (busy_wire == 1'b0);
+    @(posedge sys_clk_reg);
+    bit_in_reg          <= 1'b0;
+    write_bit_cmd_reg   <= 1'b1;
+    @(posedge sys_clk_reg);
+    write_bit_cmd_reg   <= 1'b0;
+    
+    wait (busy_wire == 1'b0);
+    @(posedge sys_clk_reg);
+    bit_in_reg          <= 1'b0;
+    write_bit_cmd_reg   <= 1'b1;
+    @(posedge sys_clk_reg);
+    write_bit_cmd_reg   <= 1'b0;    
 end
 endtask
 endmodule 
