@@ -66,13 +66,9 @@ begin
     system_reset();
     start_cmd();
     address();
-
-
-    //stop_cmd();
+    stop_cmd();
 
     #15us;
-
-    
 /*    // Checking DPRAM register value with address 0x40
     if (dual_port_ram.ram[16] == 32'h00000031)
         success = 1;
@@ -241,59 +237,78 @@ task address;
 begin
     wait (busy_wire == 1'b0);
     @(posedge sys_clk_reg);
+    $display("TIME Of FIRST BIT:  %t", $realtime);
     bit_in_reg          <= 1'b1;
     write_bit_cmd_reg   <= 1'b1;
     @(posedge sys_clk_reg);
     write_bit_cmd_reg   <= 1'b0;
+    @(posedge sys_clk_reg);
 
     wait (busy_wire == 1'b0);
     @(posedge sys_clk_reg);
+    $display("TIME Of SECOND BIT:  %t", $realtime);
     bit_in_reg          <= 1'b1;
     write_bit_cmd_reg   <= 1'b1;
     @(posedge sys_clk_reg);
     write_bit_cmd_reg   <= 1'b0;
+    @(posedge sys_clk_reg);
 
     wait (busy_wire == 1'b0);
     @(posedge sys_clk_reg);
+    $display("TIME Of THIRD BIT:  %t", $realtime);
     bit_in_reg          <= 1'b0;
     write_bit_cmd_reg   <= 1'b1;
     @(posedge sys_clk_reg);
     write_bit_cmd_reg   <= 1'b0;
+    @(posedge sys_clk_reg);
     
     wait (busy_wire == 1'b0);
     @(posedge sys_clk_reg);
+    $display("TIME Of FOURTH BIT:  %t", $realtime);
     bit_in_reg          <= 1'b1;
     write_bit_cmd_reg   <= 1'b1;
     @(posedge sys_clk_reg);
     write_bit_cmd_reg   <= 1'b0;
+    @(posedge sys_clk_reg);
 
     wait (busy_wire == 1'b0);
     @(posedge sys_clk_reg);
+    $display("TIME Of FIFTH BIT:  %t", $realtime);
     bit_in_reg          <= 1'b0;
     write_bit_cmd_reg   <= 1'b1;
     @(posedge sys_clk_reg);
     write_bit_cmd_reg   <= 1'b0;
+    @(posedge sys_clk_reg);
     
     wait (busy_wire == 1'b0);
     @(posedge sys_clk_reg);
+    $display("TIME Of SIXTH BIT:  %t", $realtime);
     bit_in_reg          <= 1'b0;
     write_bit_cmd_reg   <= 1'b1;
     @(posedge sys_clk_reg);
     write_bit_cmd_reg   <= 1'b0;
+    @(posedge sys_clk_reg);
     
     wait (busy_wire == 1'b0);
     @(posedge sys_clk_reg);
+    $display("TIME Of SEVENTH BIT:  %t", $realtime);
+    bit_in_reg          <= 1'b1;
+    write_bit_cmd_reg   <= 1'b1;
+    @(posedge sys_clk_reg);
+    write_bit_cmd_reg   <= 1'b0;
+    @(posedge sys_clk_reg);
+    
+    wait (busy_wire == 1'b0);
+    @(posedge sys_clk_reg);
+    $display("TIME Of EIGHTH BIT:  %t", $realtime);
     bit_in_reg          <= 1'b0;
     write_bit_cmd_reg   <= 1'b1;
     @(posedge sys_clk_reg);
     write_bit_cmd_reg   <= 1'b0;
+    @(posedge sys_clk_reg);
     
     wait (busy_wire == 1'b0);
     @(posedge sys_clk_reg);
-    bit_in_reg          <= 1'b0;
-    write_bit_cmd_reg   <= 1'b1;
-    @(posedge sys_clk_reg);
-    write_bit_cmd_reg   <= 1'b0;    
 end
 endtask
 endmodule 
